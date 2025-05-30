@@ -1,5 +1,6 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import MarkDownConverter from "./components/MarkdownConverter";
+import SwiperSlider from "./components/SwiperSlider";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -28,5 +29,12 @@ PLASMIC.registerComponent(MarkDownConverter, {
   name: 'MarkDownConverter',
   props: {
     children:'string'
+  },
+});
+
+PLASMIC.registerComponent(SwiperSlider, {
+  name: 'SwiperSlider',
+  props: {
+    children: 'slot',
   },
 });
