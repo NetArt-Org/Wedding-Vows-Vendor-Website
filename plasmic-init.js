@@ -36,5 +36,6 @@ PLASMIC.registerComponent(SwiperSlider, {
   name: 'SwiperSlider',
   props: {
     children: 'slot',
+    navigation:'boolean'
   },
 });
