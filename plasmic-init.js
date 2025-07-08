@@ -68,6 +68,6 @@ PLASMIC.registerComponent(GoogleLogin, {
   props: {
     onSuccess: "function",
     onError: "function",
-    className: "class",
+    className: "string",
   },
 });
