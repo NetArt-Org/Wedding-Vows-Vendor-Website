@@ -1,7 +1,19 @@
 import Markdown from 'markdown-to-jsx';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const MarkDownConverter = ({ children }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Don't render markdown during SSR to prevent hydration mismatch
+  if (!isClient) {
+    return <div style={{ width: '100%' }}>{children}</div>;
+  }
+
   return (
     <Markdown
       options={{

@@ -40,3 +40,28 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Remove extra space around FirebaseUI widget */
+.firebaseui-container,
+.firebaseui-card-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+}
+
+/* Remove extra space from the Plasmic instance wrapper for GoogleLogin */
+div[class*="NavMenuItem__googleLogin"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Remove gap from flex container parents if present */
+div[class*="wab_flex-container"] {
+  gap: 0 !important;
+}

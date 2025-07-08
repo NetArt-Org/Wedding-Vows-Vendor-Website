@@ -9,6 +9,7 @@ import {
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { PLASMIC } from "@/plasmic-init";
+import PlasmicHydrationWrapper from "@/components/PlasmicHydrationWrapper";
 
 export default function PlasmicLoaderPage(props) {
   const { plasmicData, queryCache } = props;
@@ -26,7 +27,9 @@ export default function PlasmicLoaderPage(props) {
       pageParams={pageMeta.params}
       pageQuery={router.query}
     >
-      <PlasmicComponent component={pageMeta.displayName} />
+      <PlasmicHydrationWrapper fallback={<div>Loading...</div>}>
+        <PlasmicComponent component={pageMeta.displayName} />
+      </PlasmicHydrationWrapper>
     </PlasmicRootProvider>
   );
 }
