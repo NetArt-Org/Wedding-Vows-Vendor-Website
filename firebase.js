@@ -1,19 +1,26 @@
-import { initializeApp, getApps } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAgCYW0Q9BkTGkaMfLInLIIR83_ERNR468",
-  authDomain: "wedding-vow.firebaseapp.com",
-  projectId: "wedding-vow",
-  storageBucket: "wedding-vow.appspot.com", // fixed typo
-  messagingSenderId: "106307862876",
-  appId: "1:106307862876:web:ed861d90611bbda5484199",
-  measurementId: "G-6T71DWGF0X"
+  apiKey: "AIzaSyAMXKCmEgMeZTFj7iLHkqOynQ_X72wHXWE",
+  authDomain: "wvvendor.firebaseapp.com",
+  projectId: "wvvendor",
+  storageBucket: "wvvendor.firebasestorage.app",
+  messagingSenderId: "227868994675",
+  appId: "1:227868994675:web:8637e5fd48dfbec2934e06"
 };
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
-const auth = getAuth(app);
-const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
+// Initialize Firebase App
+const app = initializeApp(firebaseConfig);
 
-export { auth, analytics }; 
+// Auth Instance
+const auth = getAuth(app);
+
+// Google Auth Provider
+const provider = new GoogleAuthProvider();
+
+export { auth, provider };

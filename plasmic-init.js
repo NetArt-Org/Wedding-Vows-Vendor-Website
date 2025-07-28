@@ -4,6 +4,7 @@ import SwiperSlider from "./components/SwiperSlider";
 import ClientOnly from "./components/ClientOnly";
 import PlasmicHydrationWrapper from "./components/PlasmicHydrationWrapper";
 import GoogleLogin from "./components/GoogleLogin";
+import LoginButton from "./components/LoginButton";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -69,5 +70,10 @@ PLASMIC.registerComponent(GoogleLogin, {
     onSuccess: "function",
     onError: "function",
     className: "string",
+  },
+});
+PLASMIC.registerComponent(LoginButton, {
+  name: "LoginButton",
+  props: {
   },
 });
