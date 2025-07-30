@@ -1,10 +1,7 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import MarkDownConverter from "./components/MarkdownConverter";
 import SwiperSlider from "./components/SwiperSlider";
-import ClientOnly from "./components/ClientOnly";
 import PlasmicHydrationWrapper from "./components/PlasmicHydrationWrapper";
-import GoogleLogin from "./components/GoogleLogin";
-import LoginButton from "./components/LoginButton";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -48,32 +45,11 @@ PLASMIC.registerComponent(SwiperSlider, {
   },
 });
 
-PLASMIC.registerComponent(ClientOnly, {
-  name: 'ClientOnly',
-  props: {
-    children: 'slot',
-    fallback: 'slot'
-  },
-});
 
 PLASMIC.registerComponent(PlasmicHydrationWrapper, {
   name: 'PlasmicHydrationWrapper',
   props: {
     children: 'slot',
     fallback: 'slot'
-  },
-});
-
-PLASMIC.registerComponent(GoogleLogin, {
-  name: "GoogleLogin",
-  props: {
-    onSuccess: "function",
-    onError: "function",
-    className: "string",
-  },
-});
-PLASMIC.registerComponent(LoginButton, {
-  name: "LoginButton",
-  props: {
   },
 });
